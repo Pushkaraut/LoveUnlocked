@@ -1,0 +1,57 @@
+body {
+    background-color: lavender;
+    height: 100vh;                          /*full screen height*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;                /*Horizontal center*/
+    align-items: center;                    /*Vertical center*/
+}
+
+img {
+    width: 250px;
+    height: auto;
+
+}
+
+.answer {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.answer button {
+    cursor: pointer;
+    background-color: pink;
+}
+
+.answer button:hover {
+    background-color: deeppink;
+}
+
+.background-emoji {
+    position: fixed;            /*stays in the fixed positn*/
+    top: 40%;
+    left: 50%;                  /*at the center of the page*/
+    transform: translate(-50%, -50%);
+
+    font-size: 750px;         /* 👈 Big background size */
+    opacity: 0.1;             /* 👈 Light transparency */
+    
+    z-index: 0;               /* 👈 Stay behind everything */
+    pointer-events: none;     /* 👈 Let clicks go through */
+    
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+#noBtn {
+    transition: top 0.3s ease, left 0.3s ease;
+}
